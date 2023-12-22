@@ -1,0 +1,8 @@
+#link1 li a.active{
+    background-color: gray;
+    color: white;
+}
+#link2 li a.active{
+    background-color: gray;
+    color: white;
+}
