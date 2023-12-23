@@ -22,7 +22,7 @@ const TaskList = ({ data }) => {
                 className={`block h-full rounded-lg ${status === "todo" && "bg-gray-50" || status === "ongoing" && "bg-lime-50" || status === "completed" && "bg-green-50"} p-4 border hover:border-pink-600`}>
                 <div className="flex justify-between items-center">
                     <strong className="font-medium ">{title}</strong>
-                    <strong className="font-medium text-sm">{
+                    <strong className={`font-medium text-sm ${status === "todo" && "text-yellow-600" || status === "ongoing" && "text-sky-600" || "text-green-600"}`}>{
                         status === "todo" && "pending" || status === "ongoing" && "in-progress" || "completed"
                     }</strong>
                 </div>

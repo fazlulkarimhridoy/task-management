@@ -3,6 +3,7 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useEffect, useState } from "react";
 import TaskList from "./TaskList";
 import { useDrop } from "react-dnd";
+import toast, { Toaster } from "react-hot-toast";
 
 const TaskDashboard = () => {
     // hooks and states
@@ -29,7 +30,7 @@ const TaskDashboard = () => {
         }),
     }));
 
-     // dnd droppers for ongoing
+    // dnd droppers for ongoing
     const [{ isOver: isOverOngoing }, dropOngoing] = useDrop(() => ({
         accept: "tasks",
         drop: (item) => addItemToList(item.id, "ongoing"),
@@ -38,7 +39,7 @@ const TaskDashboard = () => {
         }),
     }));
 
-     // dnd droppers for completed
+    // dnd droppers for completed
     const [{ isOver: isOverCompleted }, dropCompleted] = useDrop(() => ({
         accept: "tasks",
         drop: (item) => addItemToList(item.id, "completed"),
@@ -64,7 +65,17 @@ const TaskDashboard = () => {
         await axiosPublic.put(`/tasks/${id}`, { status })
             .then(res => {
                 const data = res.data;
-                console.log("status updated", data);
+                if (data.modifiedCount > 0) {
+                    if(status === "todo"){
+                        return toast.success('Task is added to to-do!');
+                    }
+                    if(status === "ongoing"){
+                        return toast.success('Task is in progress phase!');
+                    }
+                    if(status === "completed"){
+                        return toast.success('Task completed!');
+                    } 
+                }
             })
         refetch();
     };
@@ -81,6 +92,10 @@ const TaskDashboard = () => {
 
     return (
         <div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
             <div className="flex gap-4">
 
                 {/* to-do list */}
