@@ -13,7 +13,8 @@ const AddTasks = () => {
     const deadline = formData.deadline
     const priority = formData.priority
     const description = formData.description
-    const doc = { title, deadline, priority, description };
+    const status = "todo";
+    const doc = { title, deadline, priority, description, status };
 
     // sending data to the mongodb
     axiosPublic.post("/tasks", doc)

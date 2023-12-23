@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useEffect, useState } from "react";
+import TaskList from "./TaskList";
+import { useDrop } from "react-dnd";
 
 const TaskDashboard = () => {
     // hooks and states
@@ -10,7 +12,7 @@ const TaskDashboard = () => {
     const axiosPublic = useAxiosPublic();
 
     // react query to fetch data from mongodb
-    const { data: tasks = [], isPending } = useQuery({
+    const { data: tasks = [], isPending, refetch } = useQuery({
         queryKey: ["tasks"],
         queryFn: async () => {
             const res = await axiosPublic.get("/tasks");
@@ -18,6 +20,34 @@ const TaskDashboard = () => {
         }
     })
 
+    // dnd droppers for todo
+    const [{ isOver: isOverTodo }, dropTodo] = useDrop(() => ({
+        accept: "tasks",
+        drop: (item) => addItemToList(item.id, "todo"),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver(),
+        }),
+    }));
+
+     // dnd droppers for ongoing
+    const [{ isOver: isOverOngoing }, dropOngoing] = useDrop(() => ({
+        accept: "tasks",
+        drop: (item) => addItemToList(item.id, "ongoing"),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver(),
+        }),
+    }));
+
+     // dnd droppers for completed
+    const [{ isOver: isOverCompleted }, dropCompleted] = useDrop(() => ({
+        accept: "tasks",
+        drop: (item) => addItemToList(item.id, "completed"),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver(),
+        }),
+    }));
+
+    console.log("is dropping ? : ", isOverTodo, isOverOngoing, isOverCompleted);
 
     // useEffect for steps
     useEffect(() => {
@@ -28,6 +58,17 @@ const TaskDashboard = () => {
         setOngoing(ongoingData);
         setCompleted(completedData)
     }, [tasks])
+
+    // dropping functioning after dragging a task
+    const addItemToList = async (id, status) => {
+        await axiosPublic.put(`/tasks/${id}`, { status })
+            .then(res => {
+                const data = res.data;
+                console.log("status updated", data);
+            })
+        refetch();
+    };
+
 
     // showing loader if data is pending
     if (isPending) {
@@ -43,74 +84,47 @@ const TaskDashboard = () => {
             <div className="flex gap-4">
 
                 {/* to-do list */}
-                <div className="rounded-xl border border-gray-700 bg-gray-300 p-4 text-black w-1/3">
+                <div ref={dropTodo} className="rounded-xl border bg-gray-300 p-4 text-black w-1/3">
                     <div className="mb-5">
                         <h3 className="text-3xl font-bold text-center">To-do ({todo.length})</h3>
                     </div>
                     <ul className="mt-4 space-y-2">
                         {
-                            todo?.map(item => <li key={item._id} className="bg-sky-50 rounded-lg">
-                                <div className="block h-full rounded-lg border-gray-50 p-4 border hover:border-pink-600">
-                                    <strong className="font-medium ">{item.title}</strong>
-
-                                    <div className="mt-1 text-xs font-medium text-gray-600">
-                                        {item.description}
-                                    </div>
-                                    <div className="flex items-center justify-between mt-2">
-                                        <p className="text-xs font-semibold text-gray-400">Deadline : {item.deadline}</p>
-                                        <p className="text-xs font-semibold text-gray-400 pr-5">Priority : {item.priority}</p>
-                                    </div>
-                                </div>
-                            </li>)
+                            todo?.map(data => <TaskList
+                                key={data._id}
+                                data={data}
+                            ></TaskList>)
                         }
 
                     </ul>
                 </div>
 
                 {/* on-going list */}
-                <div className="rounded-xl border border-gray-700 bg-gray-200 p-4 text-black w-1/3">
+                <div ref={dropOngoing} className="rounded-xl border bg-gray-200 p-4 text-black w-1/3">
                     <div>
                         <h3 className="text-3xl font-bold text-center">On-going ({ongoing.length})</h3>
                     </div>
                     <ul className="mt-4 space-y-2">
                         {
-                            ongoing?.map(item => <li key={item._id} className="bg-lime-50 rounded-lg">
-                                <div className="block h-full rounded-lg border-gray-50 border p-4 hover:border-pink-600">
-                                    <strong className="font-medium ">{item.title}</strong>
-
-                                    <div className="mt-1 text-xs font-medium text-gray-600">
-                                        {item.description}
-                                    </div>
-                                    <div className="flex items-center justify-between mt-2">
-                                        <p className="text-xs font-semibold text-gray-400">Deadline : {item.deadline}</p>
-                                        <p className="text-xs font-semibold text-gray-400 pr-5">Priority : {item.priority}</p>
-                                    </div>
-                                </div>
-                            </li>)
+                            ongoing?.map(data => <TaskList
+                                key={data._id}
+                                data={data}
+                            ></TaskList>)
                         }
                     </ul>
                 </div>
 
                 {/* completed list */}
-                <div className="rounded-xl border border-gray-700 bg-gray-100 p-4 text-black w-1/3">
+                <div ref={dropCompleted} className="rounded-xl border bg-gray-100 p-4 text-black w-1/3">
                     <div>
                         <h3 className="text-3xl font-bold text-center">Completed ({completed.length})</h3>
                     </div>
                     <ul className="mt-4 space-y-2">
                         {
-                            completed?.map(item => <li key={item._id} className="bg-green-50 rounded-lg">
-                                <div className="block h-full rounded-lg border-gray-50 border p-4 hover:border-pink-600">
-                                    <strong className="font-medium ">{item.title}</strong>
-
-                                    <div className="mt-1 text-xs font-medium text-gray-600">
-                                        {item.description}
-                                    </div>
-                                    <div className="flex items-center justify-between mt-2">
-                                        <p className="text-xs font-semibold text-gray-400">Deadline : {item.deadline}</p>
-                                        <p className="text-xs font-semibold text-gray-400 pr-5">Priority : {item.priority}</p>
-                                    </div>
-                                </div>
-                            </li>)
+                            completed?.map(data => <TaskList
+                                key={data._id}
+                                data={data}
+                            ></TaskList>)
                         }
                     </ul>
                 </div>
