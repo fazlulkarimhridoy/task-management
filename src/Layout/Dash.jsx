@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaCircleNotch, FaHome, FaUserPlus } from "react-icons/fa";
+import { FaCheck, FaCircleNotch, FaHome, FaHourglass, FaUndoAlt, FaUserPlus } from "react-icons/fa";
 
 const Dash = () => {
   const links = (
@@ -12,6 +12,21 @@ const Dash = () => {
       <li>
         <NavLink to="addTasks">
           <FaUserPlus></FaUserPlus>Add Tasks
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="todo">
+          <FaHourglass></FaHourglass>To-do
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="ongoing">
+          <FaUndoAlt></FaUndoAlt>On-going
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="completed">
+          <FaCheck></FaCheck>Completed
         </NavLink>
       </li>
       <li>

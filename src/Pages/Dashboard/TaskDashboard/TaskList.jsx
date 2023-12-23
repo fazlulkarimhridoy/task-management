@@ -17,7 +17,7 @@ const TaskList = ({ data }) => {
     console.log("dragging ? : ", isDragging);
 
     return (
-        <li ref={drag} className="bg-sky-50 rounded-lg">
+        <li ref={drag} className="bg-sky-50 rounded-lg w-full">
             <div
                 className={`block h-full rounded-lg ${status === "todo" && "bg-gray-50" || status === "ongoing" && "bg-lime-50" || status === "completed" && "bg-green-50"} p-4 border hover:border-pink-600`}>
                 <div className="flex justify-between items-center">
