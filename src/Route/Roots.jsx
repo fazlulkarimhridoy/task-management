@@ -11,13 +11,14 @@ import OnGoing from "../Pages/Dashboard/OnGoing/OnGoing"
 import Completed from "../Pages/Dashboard/Completed/Completed"
 import AboutUs from "../Pages/AboutUs/AboutUs"
 import ContactUs from "../Pages/ContactUs/ContactUs"
+import ErrorPage from "../Components/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        errorElement: <h1>Error found</h1>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
