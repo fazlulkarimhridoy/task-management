@@ -1,16 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
 
 const Navbar = () => {
     const links =
         <>
             <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/dashboard/taskDashboard">Dashboard</NavLink></li>
             <li><NavLink to="/aboutUs">About us</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
+            <li><NavLink to="/contactUs">Contact</NavLink></li>
+            <li><NavLink to="/dashboard/taskDashboard">Dashboard</NavLink></li>
         </>
     return (
-        <div className="navbar bg-gray-100">
+        <div className="navbar">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,15 +20,16 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="text-xl">Task Management</a>
+                <a className="text-lg font-bold ml-4">Task Management</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul id="link2" className="menu menu-horizontal px-2 gap-3">
+                <ul id="link2" className="flex flex-row items-center px-2 gap-6 text-gray-600 font-semibold">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn btn-success text-white">Login</a>
+            <div className="navbar-end mr-4">
+                <button><Link className="bg-green-500 text-white py-2 px-6 mr-2 rounded-lg hover:bg-white hover:border hover:border-green-500 hover:text-green-500 hover:transition duration-500">Sign Up</Link></button>
+                <button><Link className="bg-sky-500 text-white py-2 px-6 rounded-lg hover:bg-blue-500 hover:transition duration-500">Sign In</Link></button>
             </div>
         </div>
     );

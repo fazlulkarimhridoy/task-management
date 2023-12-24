@@ -1,8 +1,24 @@
 #link1 li a.active{
-    background-color: gray;
+    background-color: #0EA5E9;
     color: white;
+    font-weight: 600;
+    text-decoration: none;
 }
 #link2 li a.active{
-    background-color: gray;
-    color: white;
+    /* background-color: grey; */
+    color: #0EA5E9;
+    font-weight: bold;
+    font-size: 18px;
+}
+#link2 li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #0EA5E9;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+#link2 li:hover::after{
+    width: 100%;
 }

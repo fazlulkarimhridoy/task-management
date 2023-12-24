@@ -1,6 +1,6 @@
 const UserCategory = () => {
   return (
-    <section className="py-6 bg-gray-100 text-gray-800">
+    <section className="py-6 text-gray-800">
       <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
         <p className="p-2 text-sm font-medium tracki text-center uppercase">
           Development team
