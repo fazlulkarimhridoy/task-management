@@ -9,8 +9,8 @@ const UserCategory = () => {
         <p className="p-2 text-sm font-medium text-center uppercase">
           User category
         </p>
-        <h1 className="text-4xl font-bold leadi text-center sm:text-5xl mb-5">
-          People who knows to manage their tasks
+        <h1 className="text-3xl font-bold text-center sm:text-3xl mb-5">
+          People who manages their tasks
         </h1>
         <div className="flex flex-row flex-wrap-reverse justify-center sm:p-10 mt-8 bg-gray-100">
           {/* first person */}

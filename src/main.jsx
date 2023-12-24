@@ -9,17 +9,20 @@ import {
 } from '@tanstack/react-query'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
+import AuthProvider from './Providers/AuthProvider'
 
 
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <DndProvider backend={HTML5Backend}>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router}>
-        </RouterProvider>
-      </QueryClientProvider>
-    </DndProvider>
+    <AuthProvider>
+      <DndProvider backend={HTML5Backend}>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router}>
+          </RouterProvider>
+        </QueryClientProvider>
+      </DndProvider>
+    </AuthProvider>
   </React.StrictMode>
 )

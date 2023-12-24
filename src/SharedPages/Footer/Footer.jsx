@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <footer className="text-gray-900">
-            <div className="container flex flex-col items-center gap-4 justify-between p-4 mx-auto md:p-8 lg:flex-row divide-gray-600">
+            <div className="container flex flex-col items-center gap-4 justify-between p-4 mx-auto md:px-8 lg:flex-row divide-gray-600">
                 <ul className="self-center font-medium py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:justify-start">
                     <li>Shop</li>
                     <li>About</li>

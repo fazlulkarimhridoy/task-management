@@ -28,8 +28,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mr-4">
-                <button><Link className="bg-green-500 text-white py-2 px-6 mr-2 rounded-lg hover:bg-white hover:border hover:border-green-500 hover:text-green-500 hover:transition duration-500">Sign Up</Link></button>
-                <button><Link className="bg-sky-500 text-white py-2 px-6 rounded-lg hover:bg-blue-500 hover:transition duration-500">Sign In</Link></button>
+                <button><Link to="/register" className="bg-green-500 text-white py-2 px-6 mr-2 rounded-lg hover:bg-white hover:border hover:border-green-500 hover:text-green-500 hover:transition duration-500">Sign Up</Link></button>
+                <button><Link to="/login" className="bg-sky-500 text-white py-2 px-6 rounded-lg hover:bg-blue-500 hover:transition duration-500">Sign In</Link></button>
             </div>
         </div>
     );
