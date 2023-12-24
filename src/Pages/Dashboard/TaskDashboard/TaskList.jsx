@@ -31,7 +31,7 @@ const TaskList = ({ data }) => {
                 </div>
                 <div className="flex items-center justify-between mt-2">
                     <p className="text-xs font-semibold text-gray-400">Deadline : {deadline}</p>
-                    <p className="text-xs font-semibold text-gray-400 pr-5">Priority : {priority}</p>
+                    <p className="text-xs font-semibold text-gray-400">Priority : {priority}</p>
                 </div>
             </div>
         </li>
