@@ -12,6 +12,7 @@ import Completed from "../Pages/Dashboard/Completed/Completed"
 import AboutUs from "../Pages/AboutUs/AboutUs"
 import ContactUs from "../Pages/ContactUs/ContactUs"
 import ErrorPage from "../Components/ErrorPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -42,13 +43,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/taskDashboard",
-                element: <TaskDashboard></TaskDashboard>
+                element: <PrivateRoute><TaskDashboard></TaskDashboard></PrivateRoute>
             }
         ]
     },
     {
         path: "dashboard",
-        element: <Dash></Dash>,
+        element: <PrivateRoute><Dash></Dash></PrivateRoute>,
         children: [
             {
                 path: "taskDashboard",
