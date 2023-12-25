@@ -1,12 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { FaCheck, FaCircleNotch, FaHome, FaHourglass, FaPlus, FaUndoAlt } from "react-icons/fa";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import { FaCheck, FaDatabase, FaHome, FaHourglass, FaPlus, FaUndoAlt } from "react-icons/fa";
 
 const Dash = () => {
   const links = (
     <>
       <li>
         <NavLink to="taskDashboard">
-          <FaCircleNotch></FaCircleNotch> Task Dashboard
+          <FaDatabase></FaDatabase> Task Dashboard
         </NavLink>
       </li>
       <li>
@@ -34,7 +34,7 @@ const Dash = () => {
           <FaHome></FaHome>Home Page
         </NavLink>
       </li>
-      
+
     </>
   );
   return (
@@ -42,6 +42,15 @@ const Dash = () => {
       <div className="flex">
         {/* dashboard sidebar */}
         <div className="min-h-screen p-3 space-y-2 w-60 bg-gray-100 text-gray-800">
+          <div className="flex items-center p-2 space-x-4">
+            <img src="" alt="user_photo" className="w-12 h-12 rounded-full bg-gray-500" />
+            <div>
+              <h2 className="text-lg font-semibold">Fazlul Karim</h2>
+              <span className="flex items-center space-x-1">
+                <Link to="/profile" className="text-xs hover:underline text-gray-600">View profile</Link>
+              </span>
+            </div>
+          </div>
           <div className="divide-y divide-gray-300 pt-10">
             <ul
               id="link1"

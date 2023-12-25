@@ -12,9 +12,9 @@ const UserCategory = () => {
         <h1 className="text-3xl font-bold text-center sm:text-3xl mb-5">
           People who manages their tasks
         </h1>
-        <div className="flex flex-row flex-wrap-reverse justify-center sm:p-10 mt-8 bg-gray-100">
+        <div className="flex flex-row flex-wrap-reverse justify-center sm:p-16 mt-8 bg-gray-100">
           {/* first person */}
-          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-500 text-gray-100">
+          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-400 text-gray-100">
             <img
               className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
               src={userImage1}
@@ -26,7 +26,7 @@ const UserCategory = () => {
           </div>
 
           {/* second person */}
-          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-500 text-gray-100">
+          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-400 text-gray-100">
             <img
               className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
               src={userImage5}
@@ -38,7 +38,7 @@ const UserCategory = () => {
           </div>
 
           {/* first person */}
-          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-500 text-gray-100">
+          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-400 text-gray-100">
             <img
               className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
               src={userImage1}
@@ -50,7 +50,7 @@ const UserCategory = () => {
           </div>
 
           {/* first person */}
-          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-500 text-gray-100">
+          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-400 text-gray-100">
             <img
               className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
               src={userImage1}
@@ -62,7 +62,7 @@ const UserCategory = () => {
           </div>
 
           {/* first person */}
-          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-500 text-gray-100">
+          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-400 text-gray-100">
             <img
               className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
               src={userImage5}
@@ -74,7 +74,7 @@ const UserCategory = () => {
           </div>
 
           {/* first person */}
-          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-500 text-gray-100">
+          <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-gray-400 text-gray-100">
             <img
               className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
               src={userImage6}
