@@ -73,6 +73,12 @@ const Login = () => {
                         <p className="mt-4 leading-relaxed text-gray-500">
                             You can access many features by signing in your accounts and also you can explore dashboard. So, its time to sign in.
                         </p>
+                        <div className="my-6 space-y-4">
+                            <button onClick={googleSignIn} aria-label="Login with Google" type="button" className="flex items-center hover:bg-blue-600 hover:text-white justify-center w-full p-2 space-x-4 border rounded-md focus:ri focus:ri border-gray-600 focus:ri">
+                                <FaGoogle></FaGoogle>
+                                <p>Login with Google</p>
+                            </button>
+                        </div>
 
                         <form onSubmit={handleSubmit(onSubmit)} className="mt-8 grid grid-cols-6 gap-6">
 
@@ -147,12 +153,7 @@ const Login = () => {
                                 </p>
                             </div>
                         </form>
-                        <div className="my-6 space-y-4">
-                            <button onClick={googleSignIn} aria-label="Login with Google" type="button" className="flex items-center hover:bg-blue-600 hover:text-white justify-center w-full p-2 space-x-4 border rounded-md focus:ri focus:ri border-gray-600 focus:ri">
-                                <FaGoogle></FaGoogle>
-                                <p>Login with Google</p>
-                            </button>
-                        </div>
+                        
                     </div>
                 </main>
             </div>
