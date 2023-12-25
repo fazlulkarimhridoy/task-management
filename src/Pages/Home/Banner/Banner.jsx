@@ -11,7 +11,7 @@ const Banner = () => {
                     <p className="mb-5">
                         A daily essential task management website where you can create and manage your work schedules and do many more things. Please sign up or sign in to explore dashboard.
                     </p>
-                    <button className="mt-5"><Link to="/login" className="bg-green-500 text-white py-4 px-8 rounded-lg hover:bg-white hover:border hover:border-green-500 hover:text-green-500 hover:transition duration-500">Let’s Explore</Link></button>
+                    <button className="mt-5"><Link to="/login" className="bg-green-500 text-white py-4 px-8 rounded-lg hover:bg-white hover:border-green-500 hover:text-green-500 hover:transition duration-200">Let’s Explore</Link></button>
                 </div>
             </div>
         </div>

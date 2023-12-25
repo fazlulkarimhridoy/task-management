@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useEffect, useState } from "react";
@@ -48,7 +49,7 @@ const TaskDashboard = () => {
         }),
     }));
 
-    console.log("is dropping ? : ", isOverTodo, isOverOngoing, isOverCompleted);
+    // console.log("is dropping ? : ", isOverTodo, isOverOngoing, isOverCompleted);
 
     // useEffect for steps
     useEffect(() => {

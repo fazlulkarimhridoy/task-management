@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
 import { useDrag } from "react-dnd";
@@ -14,7 +15,7 @@ const TaskList = ({ data }) => {
             isDragging: !!monitor.isDragging()
         })
     }))
-    console.log("dragging ? : ", isDragging);
+    // console.log("dragging ? : ", isDragging);
 
     return (
         <li ref={drag} className="bg-sky-50 rounded-lg w-full">

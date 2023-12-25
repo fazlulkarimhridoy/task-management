@@ -103,20 +103,20 @@ const Navbar = () => {
           </div>
         ) : (
           <>
-            <button>
+          <button>
               <Link
-                to="/register"
-                className="bg-green-500 text-white py-2 px-6 mr-2 rounded-lg hover:bg-white hover:border hover:border-green-500 hover:text-green-500 hover:transition duration-500"
+                to="/login"
+                className="bg-white text-sky-500 border border-sky-500 py-2 px-6 mr-2 rounded-lg hover:bg-sky-500 hover:text-white hover:transition duration-200"
               >
-                Sign Up
+                Sign In
               </Link>
             </button>
             <button>
               <Link
-                to="/login"
-                className="bg-sky-500 text-white py-2 px-6 rounded-lg hover:bg-blue-500 hover:transition duration-500"
+                to="/register"
+                className="bg-green-500 text-white py-2 px-6 rounded-lg hover:bg-white hover:border-green-500 hover:text-green-500 hover:border hover:transition duration-200"
               >
-                Sign In
+                Sign Up
               </Link>
             </button>
           </>
