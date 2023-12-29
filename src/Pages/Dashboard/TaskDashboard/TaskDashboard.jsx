@@ -97,10 +97,10 @@ const TaskDashboard = () => {
                 position="top-center"
                 reverseOrder={false}
             />
-            <div className="flex gap-4">
+            <div className="flex flex-col lg:flex-row gap-4">
 
                 {/* to-do list */}
-                <div ref={dropTodo} className="rounded-xl border bg-gray-300 p-4 text-black w-1/3">
+                <div ref={dropTodo} className="rounded-xl border bg-gray-300 p-4 text-black sm:w-1/3">
                     <div className="mb-5">
                         <h3 className="text-xl text-gray-500 font-bold text-center">To-Do ({todo.length})</h3>
                     </div>
@@ -116,7 +116,7 @@ const TaskDashboard = () => {
                 </div>
 
                 {/* on-going list */}
-                <div ref={dropOngoing} className="rounded-xl border bg-gray-200 p-4 text-black w-1/3">
+                <div ref={dropOngoing} className="rounded-xl border bg-gray-200 p-4 text-black sm:w-1/3">
                     <div>
                         <h3 className="text-xl text-gray-500 font-bold text-center">On-Going ({ongoing.length})</h3>
                     </div>
@@ -131,7 +131,7 @@ const TaskDashboard = () => {
                 </div>
 
                 {/* completed list */}
-                <div ref={dropCompleted} className="rounded-xl border bg-gray-100 p-4 text-black w-1/3">
+                <div ref={dropCompleted} className="rounded-xl border bg-gray-100 p-4 text-black sm:w-1/3">
                     <div>
                         <h3 className="text-xl text-gray-500 font-bold text-center">Completed ({completed.length})</h3>
                     </div>

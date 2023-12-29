@@ -10,28 +10,20 @@ const Navbar = () => {
   // handle logout
   const handleLogout = () => {
     logout()
-    .then(res => {
+      .then(res => {
         const user = res.user;
         console.log(user);
-    })
+      })
   };
 
   //links
   const links = (
     <>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/aboutUs">About us</NavLink>
-      </li>
-      <li>
-        <NavLink to="/contactUs">Contact</NavLink>
-      </li>
+      <li><NavLink to="/">Home</NavLink></li>
+      <li><NavLink to="/aboutUs">About us</NavLink></li>
+      <li> <NavLink to="/contactUs">Contact</NavLink></li>
       {user && (
-        <li>
-          <NavLink to="/dashboard/taskDashboard">Dashboard</NavLink>
-        </li>
+        <li><NavLink to="/dashboard/taskDashboard">Dashboard</NavLink></li>
       )}
     </>
   );
@@ -103,7 +95,7 @@ const Navbar = () => {
           </div>
         ) : (
           <>
-          <button>
+            <button>
               <Link
                 to="/login"
                 className="bg-white text-sky-500 border border-sky-500 py-2 px-6 mr-2 rounded-lg hover:bg-sky-500 hover:text-white hover:transition duration-200"
