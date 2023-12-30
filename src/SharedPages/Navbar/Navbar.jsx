@@ -56,7 +56,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="text-lg font-bold ml-4">Task Management</a>
+        <a className="sm:text-lg font-bold ml-4">Task Management</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul
